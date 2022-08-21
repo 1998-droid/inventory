@@ -30,12 +30,12 @@
                                             <th>Nama</th>
                                             <th>Nomor</th>
                                             <th>File</th>
-                                            <th>Wkt Upload</th>
+                                            <th>Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT * FROM tb_data1") or die (mysqli_error($koneksi));
+                                    $sql = mysqli_query($koneksi, "SELECT * FROM tb_data") or die (mysqli_error($koneksi));
 
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
@@ -44,9 +44,9 @@
                                             <td><?php echo $data['nama']; ?></td>
                                             <td><?php echo $data['nomor']; ?></td>
                                             <td><?php echo $data['file']; ?></td>
-                                            <td><?php echo $data['time']; ?></td>
-                                            <td><a href="preview.php?id=<?php echo $data['id_data1'];?>" class="btn btn-primary btn-sm" >Preview</a>
-                                            <a href="hps.php?id=<?php echo $data['id_data1'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a></td>
+                                            <td><?php echo $data['kategori']; ?></td>
+                                            <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
+                                            <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a></td>
                                             
                                         </tr>
                                         <?php

@@ -14,12 +14,12 @@ include_once "../koneksi.php";
 // 		   <p>Anda Bukan Pegawai.</p>
 // 		   <button type='button' onclick=location.href='./'>Back</button>");}
 
-           session_start();
+    //        session_start();
  
-	// cek apakah yang mengakses halaman ini sudah login
-	if($_SESSION['hak_akses']==""){
-		header("location:../auth/log.php?pesan=gagal");
-	}
+	//  cek apakah yang mengakses halaman ini sudah login
+	// if($_SESSION['hak_akses']==""){
+	// 	header("location:../auth/log.php?pesan=gagal");
+	// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
