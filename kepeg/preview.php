@@ -10,7 +10,7 @@
     
             <?php
                 $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
-                $query = mysqli_query($koneksi,"SELECT * FROM tb_data1 WHERE id_data1='$id' ");
+                $query = mysqli_query($koneksi,"SELECT * FROM tb_data WHERE id_data='$id' ");
                 $data  = mysqli_fetch_array($query);
             ?>
             <h1>Judul Document: <?php echo $data['nama'];?></h1>

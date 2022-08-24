@@ -14,12 +14,12 @@ include_once "../koneksi.php";
 // 		   <p>Anda Bukan Pegawai.</p>
 // 		   <button type='button' onclick=location.href='./'>Back</button>");}
 
-    //        session_start();
+           session_start();
  
-	//  cek apakah yang mengakses halaman ini sudah login
-	// if($_SESSION['hak_akses']==""){
-	// 	header("location:../auth/log.php?pesan=gagal");
-	// }
+	 //cek apakah yang mengakses halaman ini sudah login
+	if($_SESSION['role']==""){
+		header("location:../auth/log.php?pesan=gagal");
+	}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +52,7 @@ include_once "../koneksi.php";
                         <!-- <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li> -->
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="../auth/logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,8 +79,8 @@ include_once "../koneksi.php";
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Admin <?=($_SESSION['hak_akses'])?>
+                        <div class="small">Logged in as</div>
+                        <b><?=($_SESSION['role'])?></b>
                     </div>
                 </nav>
             </div>
