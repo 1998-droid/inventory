@@ -39,7 +39,7 @@
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
                                     <tbody>
-                                        cobaaaaaaa
+                                        
                                         <tr>
                                             <td><?php echo $data['nama']; ?></td>
                                             <td><?php echo $data['nomor']; ?></td>
