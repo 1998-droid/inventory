@@ -35,7 +35,7 @@
     <div class="row g-2">
     <div class="col-md-4 mt-4">
         <div class="form-floating">
-        <input type="file" id="pdf-file" name="file" accept="application/pdf" >
+        <input type="file" id="pdf-file" name="file" accept="application/pdf" required>
         </div>
     </div>
     </div>
