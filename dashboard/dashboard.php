@@ -10,18 +10,19 @@
 <h1 class="mt-4">Dashboard</h1>
 <hr>
 <div class="box">
-<div style="width: 800px;margin: 0px auto;">
+<div style="width: 900px;margin: 0px auto;">
     <canvas id="myChart"></canvas>
 </div>
+
 </div>
 </div>
 </main>
 <script>
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
-    	type: 'bar',
+    	type: 'pie',
     	data: {
-    labels: ["KPS", "MFK", "TKRS"],
+    labels: ["KPS(Total = 20 file)", "MFK(Total = 20 file)", "TKRS(Total = 20 file)"],
     datasets: [{
     	label: '',
     	data: [
@@ -39,9 +40,9 @@
     	?>
     	],
     	backgroundColor: [
-    	'rgba(255, 99, 132, 0.2)',
-    	'rgba(54, 162, 235, 0.2)',
-    	'rgba(255, 206, 86, 0.2)'
+    	'rgba(255, 99, 132, 1)',
+    	'rgba(54, 162, 235, 1)',
+    	'rgba(255, 206, 86, 1)'
     	],
     	borderColor: [
     	'rgba(255,99,132,1)',
@@ -62,6 +63,7 @@
     	}
     });
 </script>
+
 <?php
     include_once "../_footer.php";
 ?>

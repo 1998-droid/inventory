@@ -39,13 +39,7 @@
         </div>
     </div>
     </div>
-    <div class="row g-2">
-    <div class="col-md-4 mt-4">
-        <div class="form-floating">
-        <canvas id="pdf-preview" width="350"></canvas>
-        </div>
-    </div>
-    </div>
+    
     <div class="col-md-4 mt-4">
     <button class="w-100 btn btn-primary btn-lg" type="submit">
         Upload
