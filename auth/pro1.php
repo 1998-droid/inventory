@@ -28,7 +28,7 @@ if($cek > 0){
 		$_SESSION['role'] = "admin";
         $_SESSION['nama']    = $data['nama'];
 		// alihkan ke halaman dashboard admin
-		header("location:../kepeg");
+		header("location:../dashboard");
  
 	// cek jika user login sebagai pegawai
 	}else if($data['role']=="pegawai"){
@@ -38,7 +38,7 @@ if($cek > 0){
 		$_SESSION['nama']    = $data['nama'];
 		$_SESSION['kategori']    = $data['kategori'];
 		// alihkan ke halaman dashboard pegawai
-		header("location:../kepeg");
+		header("location:../dashboard");
  
 	// cek jika user login sebagai pengurus
 	}else{
