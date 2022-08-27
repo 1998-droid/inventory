@@ -22,7 +22,10 @@
     var myChart = new Chart(ctx, {
     	type: 'pie',
     	data: {
-    labels: ["KPS(Total = 20 file)", "MFK(Total = 20 file)", "TKRS(Total = 20 file)"],
+    labels: ["KPS(Total = 20 file)", "MFK(Total = 20 file)", "TKRS(Total = 20 file)",
+	"PMKP(Total = 20 file)", "MRMIK(Total = 20 file)", "PPI(Total = 20 file)", "PPK(Total = 20 file)", "AKP(Total = 20 file)", "HPK(Total = 20 file)",
+	"PP(Total = 20 file)", "PAP(Total = 20 file)", "PAB(Total = 20 file)", "PKPO(Total = 20 file)", "KE(Total = 20 file)", "SKP(Total = 20 file)", "KIA(Total = 20 file)",
+	"TBC(Total = 20 file)", "HIV(Total = 20 file)", "Stunting(Total = 20 file)", "KB(Total = 20 file)",],
     datasets: [{
     	label: '',
     	data: [
@@ -36,6 +39,91 @@
     	?>, 
     	<?php 
     	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='TKRS'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PMKP'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='MRMIK'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PPI'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PPK'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='AKP'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='HPK'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PP'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PAP'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PAB'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='PKPO'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='KE'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='SKP'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='KIA'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='TBC'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='HIV'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='Stunting'");
+    	echo mysqli_num_rows($jumlah_fisip);
+    	?>
+		, 
+    	<?php 
+    	$jumlah_fisip = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='KB'");
     	echo mysqli_num_rows($jumlah_fisip);
     	?>
     	],

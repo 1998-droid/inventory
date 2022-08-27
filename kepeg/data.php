@@ -35,7 +35,7 @@
                                         </tr>
                                     </thead>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT * FROM tb_data a JOIN  tb_user b on a.kategori=b.kategori where user='$_SESSION[username]'") or die (mysqli_error($koneksi));
+                                    $sql = mysqli_query($koneksi, "SELECT *, file AS berkas FROM tb_data a JOIN  tb_user b on a.kategori=b.kategori where user='$_SESSION[username]'") or die (mysqli_error($koneksi));
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
                                     <tbody>

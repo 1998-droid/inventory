@@ -7,24 +7,24 @@ if ($tipe_file == "application/pdf") //mengecek apakah file tersebu pdf atau buk
 {
  $nama     = trim($_POST['nama']);
  $nomor    = trim($_POST['nomor']);
- $kategori    = trim($_POST['kategori']);
+ $kategori    = $_POST['kategori'];
  $file 	= trim($_FILES['file']['name']);
 
  $sql = "INSERT INTO tb_data  (nama, nomor, kategori) VALUES ('$nama', '$nomor', '$kategori')";
  mysqli_query($koneksi,$sql); //simpan data judul dahulu untuk mendapatkan id
 
  //dapatkan id terkahir
- $query = mysqli_query($koneksi,"SELECT kategori FROM tb_data  ORDER BY kategori DESC LIMIT 1");
+ $query = mysqli_query($koneksi,"SELECT id_data FROM tb_data  ORDER BY id_data DESC LIMIT 1");
  $data  = mysqli_fetch_array($query);
 
  //mengganti nama pdf
- $nama_baru = "Pokja_".$data['kategori'].".pdf"; //hasil contoh: file_1.pdf
+ $nama_baru = "Pokja_".$data['id_data'].".pdf"; //hasil contoh: file_1.pdf
  $file_temp = $_FILES['file']['tmp_name']; //data temp yang di upload
  $folder    = "file"; //folder tujuan
 
  move_uploaded_file($file_temp, "$folder/$nama_baru"); //fungsi upload
  //update nama file di database
- mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE kategori='$data[kategori]' ");
+ mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE id_data='$data[id_data]' ");
 
  header('location:data.php?alert=upload-berhasil');
 
