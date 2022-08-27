@@ -10,7 +10,7 @@
 <h1 class="mt-4">Dashboard</h1>
 <hr>
 <div class="box">
-<div style="width: 900px;margin: 0px auto;">
+<div style="width: 800px;margin: 0px auto;">
     <canvas id="myChart"></canvas>
 </div>
 
@@ -27,7 +27,7 @@
 	"PP(Total = 20 file)", "PAP(Total = 20 file)", "PAB(Total = 20 file)", "PKPO(Total = 20 file)", "KE(Total = 20 file)", "SKP(Total = 20 file)", "KIA(Total = 20 file)",
 	"TBC(Total = 20 file)", "HIV(Total = 20 file)", "Stunting(Total = 20 file)", "KB(Total = 20 file)",],
     datasets: [{
-    	label: '',
+    	label: 'Data File Program Kerja',
     	data: [
     	<?php 
     	$jumlah_teknik = mysqli_query($koneksi,"SELECT kategori FROM tb_data where kategori='KPS'");
@@ -128,9 +128,27 @@
     	?>
     	],
     	backgroundColor: [
-    	'rgba(255, 99, 132, 1)',
-    	'rgba(54, 162, 235, 1)',
-    	'rgba(255, 206, 86, 1)'
+    	'rgba(240, 15, 255, 1.0)',
+    	'rgba(250, 174, 215, 1.0)',
+    	'rgba(0, 15, 255, 1.0)', 
+    	'rgba(127, 255, 212, 1.0)'//mulai dari sini
+		,'rgba(240, 15, 255, 1.0)'
+		,'rgba(245, 95, 220, 1.0)'
+		,'rgba(0, 0, 255, 1.0)'
+		,'rgba(138, 162, 226, 1.0)'
+		,'rgba(229, 82, 42, 1.0)'
+		,'rgba(222, 235, 135, 1.0)'
+		,'rgba(95, 249, 160, 1.0)'
+		,'rgba(127, 255, 0, 1.0)'
+		,'rgba(210, 38, 30, 1.0)',
+		'rgba(255, 247, 80, 1.0)',
+		'rgba(100, 73, 237, 1.0)',
+		'rgba(220, 193, 60, 1.0)',
+		'rgba(189, 219, 107, 1.0)',
+		'rgba(139, 176, 139, 1.0)',
+		'rgba(242, 32, 130, 0.5)',
+		'rgba(240, 14, 140, 1.0)'
+
     	],
     	borderColor: [
     	'rgba(255,99,132,1)',
