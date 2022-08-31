@@ -10,7 +10,7 @@ if ($tipe_file == "application/pdf") //mengecek apakah file tersebu pdf atau buk
  $kategori    = $_POST['kategori'];
  $file 	= trim($_FILES['file']['name']);
 
- $sql = "INSERT INTO tb_data  (nama_file, nomor, kategori) VALUES ('$nama', '$nomor', '$kategori')";
+ $sql = "INSERT INTO tb_data  (nama, nomor, kategori) VALUES ('$nama', '$nomor', '$kategori')";
  mysqli_query($koneksi,$sql); //simpan data judul dahulu untuk mendapatkan id
 
  //dapatkan id terkahir
