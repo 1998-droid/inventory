@@ -18,7 +18,7 @@ if ($tipe_file == "application/pdf") //mengecek apakah file tersebu pdf atau buk
  $data  = mysqli_fetch_array($query);
 
  //mengganti nama pdf
- $nama_baru = $data['kategori']."Pokja_".$data['nama'].".pdf"; //hasil contoh: file_1.pdf
+ $nama_baru = $data['kategori']."_".$data['nama'].".pdf"; //hasil contoh: file_1.pdf
  $file_temp = $_FILES['file']['tmp_name']; //data temp yang di upload
  $folder    = "file"; //folder tujuan
 
