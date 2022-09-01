@@ -8,18 +8,21 @@
                     <div class="container-fluid px-4">
 <div class="col-lg-12">
     
-            <?php
-                $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
-                $query = mysqli_query($koneksi,"SELECT * FROM tb_data WHERE id_data='$id' ");
-                $data  = mysqli_fetch_array($query);
-            ?>
+    <?php
+    $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
+    $query = mysqli_query($koneksi,"SELECT * FROM tb_data WHERE id_data='$id' ");
+    $data  = mysqli_fetch_array($query);
+
+
+    ?>
+            
             <h1>Judul Document: <?php echo $data['nama'];?></h1>
 <hr>
 <b>Nama:</b> <?php echo $data['nama'];?>| | <a href='data.php'> Kembali </a>
 <b>Nomor:</b> <?php echo $data['nomor'];?>
 <hr>
             
-            <embed src="file/<?php echo $data['file'];?>" type="application/pdf" width="1000" height="600">
+            <embed src="file/<?php echo $data['file'];?>" type="application/pdf" width="1000" height="600" download="<?php echo $data['nama']."pdf";?>">
 
     </div>
     </div>

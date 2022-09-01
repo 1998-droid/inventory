@@ -14,17 +14,17 @@ if ($tipe_file == "application/pdf") //mengecek apakah file tersebu pdf atau buk
  mysqli_query($koneksi,$sql); //simpan data judul dahulu untuk mendapatkan id
 
  //dapatkan id terkahir
- $query = mysqli_query($koneksi,"SELECT id_data FROM tb_data  ORDER BY id_data DESC LIMIT 1");
+ $query = mysqli_query($koneksi,"SELECT nama, kategori FROM tb_data  ORDER BY id_data DESC LIMIT 1");
  $data  = mysqli_fetch_array($query);
 
  //mengganti nama pdf
- $nama_baru = "Pokja_".$data['id_data'].".pdf"; //hasil contoh: file_1.pdf
+ $nama_baru = $data['kategori']."Pokja_".$data['nama'].".pdf"; //hasil contoh: file_1.pdf
  $file_temp = $_FILES['file']['tmp_name']; //data temp yang di upload
  $folder    = "file"; //folder tujuan
 
  move_uploaded_file($file_temp, "$folder/$nama_baru"); //fungsi upload
  //update nama file di database
- mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE id_data='$data[id_data]' ");
+ mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE nama='$data[nama]' ");
 
  header('location:data.php?alert=upload-berhasil');
 

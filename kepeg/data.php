@@ -29,7 +29,6 @@
                                         <tr>
                                             <th>Nama</th>
                                             <th>Nomor</th>
-                                            <th>File</th>
                                             <th>Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -40,12 +39,13 @@
                                     ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $data['nama_file']; ?></td>
+                                            <td><?php echo $data['nama']; ?></td>
                                             <td><?php echo $data['nomor']; ?></td>
-                                            <td><?php echo $data['file']; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
-                                            <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a></td>
+                                            <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
+                                            <a href="unduh.php?file=<?php echo $data['file'];?>" class="btn btn-warning btn-sm" >Unduh</a>
+                                        </td>
                                             
                                         </tr>
                                         <?php
