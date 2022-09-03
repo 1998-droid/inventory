@@ -46,6 +46,7 @@
                                             <td><?php echo $data['file']; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
+                                            <a href="unduh.php?file=<?php echo $data['file'];?>" class="btn btn-warning btn-sm" >Unduh</a>
                                             </td>
                                             
                                         </tr>
