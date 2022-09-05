@@ -39,7 +39,7 @@
                                     ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $data['nama']; ?></td>
+                                            <td><?php echo $data['n_file']; ?></td>
                                             <td><?php echo $data['nomor']; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>

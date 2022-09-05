@@ -41,7 +41,7 @@
     </div>
     
     <div class="col-md-4 mt-4">
-    <button class="w-100 btn btn-primary btn-lg" type="submit">
+    <button class="w-100 btn btn-primary btn-lg" type="submit" name="simpan">
         Upload
      </button>
      </div>

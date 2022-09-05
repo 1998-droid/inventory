@@ -20,7 +20,7 @@
 <script>
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
-    	type: 'pie',
+    	type: 'bar',
     	data: {
     labels: ["KPS(Total = 20 file)", "MFK(Total = 20 file)", "TKRS(Total = 20 file)",
 	"PMKP(Total = 20 file)", "MRMIK(Total = 20 file)", "PPI(Total = 20 file)", "PPK(Total = 20 file)", "AKP(Total = 20 file)", "HPK(Total = 20 file)",

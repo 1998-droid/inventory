@@ -16,9 +16,9 @@
 
     ?>
             
-            <h1>Judul Document: <?php echo $data['nama'];?></h1>
+            <h1>Judul Document: <?php echo $data['filename'];?></h1>
 <hr>
-<b>Nama:</b> <?php echo $data['nama'];?>| | <a href='data.php'> Kembali </a>
+<b>Nama:</b> <?php echo $data['filename'];?>| | <a href='data.php'> Kembali </a>
 <b>Nomor:</b> <?php echo $data['nomor'];?>
 <hr>
             
