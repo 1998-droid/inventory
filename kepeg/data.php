@@ -34,7 +34,7 @@
                                         </tr>
                                     </thead>
                                     <?php
-                                    $sql = mysqli_query($koneksi, "SELECT *, file AS berkas FROM tb_data a JOIN  tb_user b on a.kategori=b.kategori where user='$_SESSION[username]'") or die (mysqli_error($koneksi));
+                                    $sql = mysqli_query($koneksi, "SELECT a.id_data,a.n_file,a.nomor,b.kategori,a.file AS berkas FROM tb_data a JOIN  tb_user b on a.kategori=b.kategori where user='$_SESSION[username]'") or die (mysqli_error($koneksi));
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
                                     <tbody>
@@ -44,7 +44,7 @@
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
                                             <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
-                                            <a href="unduh.php?file=<?php echo $data['file'];?>" class="btn btn-warning btn-sm" >Unduh</a>
+                                            <a href="unduh.php?file=<?php echo $data['berkas'];?>" class="btn btn-warning btn-sm" >Unduh</a>
                                         </td>
                                             
                                         </tr>
