@@ -1,5 +1,10 @@
 <?php
     include_once "../_header.php";
+    $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
+    $sql = mysqli_query($koneksi, "SELECT a.id_data,a.n_file,a.nomor,b.kategori, c.nmunik,a.file AS berkas FROM tb_data a 
+                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE id_data='$id' ") 
+                                    or die (mysqli_error($koneksi));
+    $data  = mysqli_fetch_array($sql);
 ?>
 <script src="pdf.js"></script>
 <script src="pdf.worker.js"></script>
@@ -29,6 +34,13 @@
         <div class="form-floating">
         <input type="text" readonly class="form-control" name="kategori" id="floatingInputGrid" placeholder="kategori" value="<?=($_SESSION['kategori'])?>" >
         <label for="floatingSelectGrid">kategori</label>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-floating">
+        <input type="text" readonly class="form-control" name="kategori" id="floatingInputGrid" placeholder="kategori" value="<?=($data['nmunik'])?>" >
+        <label for="floatingSelectGrid">nmunik</label>
         </div>
     </div>
     </div>

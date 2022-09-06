@@ -28,27 +28,22 @@
                                     <thead>
                                         <tr>
                                             <th>Nama</th>
-                                            <th>Nomor</th>
+                                            <th>Poin</th>
                                             <th>Kategori</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <?php
-                                    $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
-                                    $sql = mysqli_query($koneksi, "SELECT a.id_data,a.n_file,a.nomor,b.kategori, c.nmunik,a.file AS berkas FROM tb_data a 
-                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE id_ep='$id' ") 
-                                    or die (mysqli_error($koneksi));
+                                    $sql = mysqli_query($koneksi, "SELECT a.id_ep, a.epname, a.kategori, a.nmunik, b.user FROM tb_ep a JOIN  tb_user b on a.kategori=b.kategori where user='$_SESSION[username]'") or die (mysqli_error($koneksi));
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
                                     <tbody>
                                         <tr>
-                                            <td><?php echo $data['n_file']; ?></td>
-                                            <td><?php echo $data['nomor']; ?></td>
-                                            <td><?php echo $data['kategori']; ?></td>
+                                            <td><?php echo $data['epname']; ?></td>
                                             <td><?php echo $data['nmunik']; ?></td>
-                                            <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
-                                            <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
-                                            <a href="unduh.php?file=<?php echo $data['berkas'];?>" class="btn btn-warning btn-sm" >Unduh</a>
+                                            <td><?php echo $data['kategori']; ?></td>
+                                            <td><a href="../kepeg/data.php?id=<?php echo $data['id_ep'];?>" class="btn btn-primary btn-sm" >Preview</a>
+                                            <a href="hps.php?id=<?php echo $data['id_ep'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
                                         </td>
                                             
                                         </tr>
@@ -58,7 +53,7 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="btn btn-primary" href="upload.php?id=<?php echo $data['id_data'];?>">Upload Data</a>
+                                    <a class="btn btn-primary" href="upload.php">Upload Data</a>
                                 </div>
                             </div>
                         </div>
