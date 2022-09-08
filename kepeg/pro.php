@@ -6,10 +6,11 @@ if(isset($_POST['simpan'])){
         {
         $nama     = trim($_POST['nama']);
         $nomor    = trim($_POST['nomor']);
+        $nmunik    = trim($_POST['nmunik']);
         $kategori    = $_POST['kategori'];
         $file 	= trim($_FILES['file']['name']);
 
-        $sql = "INSERT INTO tb_data  (n_file, nomor, kategori) VALUES ('$nama', '$nomor', '$kategori')";
+        $sql = "INSERT INTO tb_data  (n_file, nomor, kategori, nmunik) VALUES ('$nama', '$nomor', '$kategori', '$nmunik')";
         mysqli_query($koneksi,$sql); //simpan data judul dahulu untuk mendapatkan id
 
         //dapatkan id terkahir
@@ -25,7 +26,7 @@ if(isset($_POST['simpan'])){
         //update nama file di database
         mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE n_file='$data[n_file]' ");
 
-        header('location:data.php?alert=upload-berhasil');
+        header('location:../ep/data.php?alert=upload-berhasil');
 
         } else
         {

@@ -1,6 +1,7 @@
 <?php
     include_once "../_header.php";
-
+    $query = mysqli_query($koneksi,"SELECT * FROM tb_ep");
+    $data  = mysqli_fetch_array($query);
 ?>
 <script src="pdf.js"></script>
 <script src="pdf.worker.js"></script>
@@ -33,12 +34,12 @@
    
     </div>
     </div>
-    <!-- <div class="col-md-4">
+    <div class="col-md-4">
         <div class="form-floating">
-        <input type="text" readonly class="form-control" name="kategori" id="floatingInputGrid" placeholder="kategori" value="<?=($data['nmunik'])?>" >
+        <input type="text" readonly class="form-control" name="nmunik" id="floatingInputGrid" placeholder="kategori" value="<?=($data['nmunik'])?>" >
         <label for="floatingSelectGrid">nmunik</label>
         </div>
-    </div> -->
+    </div>
     
     <div class="row g-2">
     <div class="col-md-4 mt-4">
@@ -59,7 +60,6 @@
 </div>
 </div>
 </main>
-</div>
 
                     <?php
     include_once "../_footer.php";

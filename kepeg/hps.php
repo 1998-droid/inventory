@@ -11,5 +11,5 @@ $foto = $data['file'];
 unlink("file/".$foto);
 
 $query = mysqli_query($koneksi,"DELETE FROM tb_data WHERE id_data ='$id' ");
-header('location:data.php?pesan=hapus-berhasil');
+header('location:../ep/data.php?pesan=hapus-berhasil');
 ?>
