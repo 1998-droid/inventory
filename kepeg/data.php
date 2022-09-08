@@ -36,7 +36,7 @@
                                     <?php
                                     $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
                                     $sql = mysqli_query($koneksi, "SELECT a.id_data,a.n_file,a.nomor,b.kategori, c.nmunik,a.file AS berkas FROM tb_data a 
-                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE id_ep='$id' ") 
+                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE c.id_ep='$id' ") 
                                     or die (mysqli_error($koneksi));
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
@@ -49,6 +49,8 @@
                                             <td><a href="preview.php?id=<?php echo $data['id_data'];?>" class="btn btn-primary btn-sm" >Preview</a>
                                             <a href="hps.php?id=<?php echo $data['id_data'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
                                             <a href="unduh.php?file=<?php echo $data['berkas'];?>" class="btn btn-warning btn-sm" >Unduh</a>
+                                            <a href="" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal<?php echo $data['id_data'];?>">Edit</a>
+                                            
                                         </td>
                                             
                                         </tr>
@@ -58,12 +60,51 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="btn btn-primary" href="upload.php?id=<?php echo $data['id_data'];?>">Upload Data</a>
+                                    <a class="btn btn-primary" href="upload.php">Upload Data</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="modal<?php echo $data['id_data']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="modal">Edit Barang</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <!-- di dalam modal-body terdapat 4 form input yang berisi data.
+                                                        data-data tersebut ditampilkan sama seperti menampilkan data pada tabel. -->
+                                                        <div class="modal-body">
+                                                            <form>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Nama Barang</label>
+                                                                    <input type="text" class="form-control" value="<?php echo $data['n_file']; ?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">Deskripsi Barang</label>
+                                                                    <textarea class="form-control" rows="5"><?php echo $data['nomor']; ?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Jenis Barang</label>
+                                                                    <input type="text" class="form-control" value="<?php echo $data['kategori']; ?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlInput1">Harga Barang</label>
+                                                                    <input type="text" class="form-control" value="<?php echo $data['nmunik']; ?>">
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                     </div>
                 </main>
+
+           
  <?php
     include_once "../_footer.php";
 ?>

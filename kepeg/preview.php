@@ -10,7 +10,7 @@
     <?php
     $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
     $query = mysqli_query($koneksi,"SELECT a.id_data,a.n_file,a.nomor,b.kategori, c.nmunik,a.file AS berkas FROM tb_data a 
-    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE id_ep='$id' ");
+    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE id_data='$id' ");
     $data  = mysqli_fetch_array($query);
 
 
@@ -22,7 +22,7 @@
 <b>Nomor:</b> <?php echo $data['nomor'];?>
 <hr>
             
-            <embed src="file/<?php echo $data['berkas'];?>" type="application/pdf" width="1000" height="600" download="<?php echo $data['n_file']."pdf";?>">
+            <embed src="file/<?php echo $data['berkas'];?>" type="application/pdf" width="1000" height="600">
 
     </div>
     </div>

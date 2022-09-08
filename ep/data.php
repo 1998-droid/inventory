@@ -53,7 +53,8 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="btn btn-primary" href="upload.php">Upload Data</a>
+                                    <a class="btn btn-primary" href="../kepeg/upload.php">Upload Data</a>
+                                    <a class="btn btn-primary" href="#">Tambah EP</a>
                                 </div>
                             </div>
                         </div>
