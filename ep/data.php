@@ -45,6 +45,7 @@
                                             <td><a href="../kepeg/data.php?id=<?php echo $data['id_ep'];?>" class="btn btn-primary btn-sm" >Buka</a>
                                             <a href="../kepeg/upload.php?id=<?php echo $data['id_ep'];?>" class="btn btn-warning btn-sm" >upload</a>
                                             <a href="hps.php?id=<?php echo $data['id_ep'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
+                                            <a href="../kepeg/upload.php?id=<?php echo $data['id_ep'];?>" class="btn btn-success btn-sm" >Edit</a>
                                         </td>
                                             
                                         </tr>
@@ -54,7 +55,7 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="btn btn-primary" href="#">Tambah EP</a>
+                                    <a class="btn btn-primary" href="add.php">Tambah EP</a>
                                 </div>
                             </div>
                         </div>
