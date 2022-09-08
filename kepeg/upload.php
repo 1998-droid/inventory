@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-4">
         <div class="form-floating">
-        <input type="text" readonly class="form-control" name="nmunik" id="floatingInputGrid" placeholder="kategori" value="<?=($data['nmunik'])?>" >
+        <input type="text" class="form-control" name="nmunik" id="floatingInputGrid" placeholder="point" required >
         <label for="floatingSelectGrid">nmunik</label>
         </div>
     </div>
