@@ -36,7 +36,7 @@
                                     <?php
                                     $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
                                     $sql = mysqli_query($koneksi, "SELECT a.id_data,a.n_file,a.nomor,b.kategori, c.nmunik,a.file AS berkas FROM tb_data a 
-                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.kategori=c.kategori WHERE c.id_ep='$id' ") 
+                                    JOIN  tb_user b on a.kategori=b.kategori JOIN tb_ep c ON a.nmunik=c.nmunik WHERE c.id_ep='$id' ORDER BY c.id_ep='$id'") 
                                     or die (mysqli_error($koneksi));
                                     while($data = mysqli_fetch_array($sql)){
                                     ?>
@@ -59,6 +59,7 @@
                                 ?>
                                     </tbody>
                                 </table>
+                              
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <a class="btn btn-primary" href="upload.php">Upload Data</a>
                                 </div>
