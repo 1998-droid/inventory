@@ -25,8 +25,13 @@ if(isset($_POST['simpan'])){
         move_uploaded_file($file_temp, "$folder/$nama_baru"); //fungsi upload
         //update nama file di database
         mysqli_query($koneksi,"UPDATE tb_data  SET file='$nama_baru' WHERE n_file='$data[n_file]' ");
-
-        header('location:../ep/data.php?alert=upload-berhasil');
+        
+        // header('location:../ep/data.php?alert=upload-berhasil');
+        echo"
+        <script language='JavaScript'>
+                alert('Dokumen berhasil ditambahkan');
+                document.location='../ep/data.php';
+        </script>";
 
         } else
         {
