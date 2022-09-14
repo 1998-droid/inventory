@@ -44,9 +44,9 @@
                                             <td><?php echo $data['nmunik']; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
                                             <td><a href="../kepeg/data.php?id=<?php echo $data['id_ep'];?>" class="btn btn-primary btn-sm" >Buka</a>
-                                            <!-- <a href="../kepeg/upload.php?id=<?php echo $data['id_ep'];?>" class="btn btn-warning btn-sm" >upload</a> -->
-                                            <a href="hps.php?id=<?php echo $data['id_ep'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a>
-                                            <a href="../kepeg/upload.php?id=<?php echo $data['id_ep'];?>" class="btn btn-success btn-sm" >Edit</a>
+                                            <a href="../kepeg/upload2.php?id=<?php echo $data['id_ep'];?>" class="btn btn-warning btn-sm" >upload</a>
+                                            <!-- <a href="del.php?id=<?php echo $data['id_ep'];?>" onclick="return confirm('Yakin Hapus?')" class="btn btn-danger btn-sm" >Hapus</a> -->
+                                            <a href="edit.php?id=<?php echo $data['id_ep'];?>" class="btn btn-success btn-sm" >Edit</a>
                                         </td>
                                             
                                         </tr>
