@@ -41,7 +41,7 @@
                                     <tbody>
                                         
                                         <tr>
-                                            <td><?php echo $data['nama']; ?></td>
+                                            <td><?php echo $data['n_file']; ?></td>
                                             <td><?php echo $data['nomor']; ?></td>
                                             <td><?php echo $data['file']; ?></td>
                                             <td><?php echo $data['kategori']; ?></td>
